@@ -5,6 +5,9 @@ const geocode = require('./utils/geocode.js');
 const forecast = require('./utils/forecast.js');
 //revisar npm handlebars
 
+//this works for server enviroment or "3000" for localhost
+const port = process.env.PORT || 3000;
+
 const app = express();
 //usar hbs para handlebears, indicando la ruta de la carpeta donde están las plantillas
 app.set('view engine', 'hbs');
@@ -63,4 +66,8 @@ app.get('*', (req, res) =>
 		errorMessage: 'Page not found.',
 	})
 );
+/**
+ *
+ */
+
 app.listen(3000, () => console.log('Server is up'));
